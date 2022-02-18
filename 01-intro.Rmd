@@ -9,8 +9,56 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 ## Madagascar
 
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/map-2.R", print.eval = TRUE)
+
+```
+
 All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
 
 ### aaaaa
 
 Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
+
+```{r}
+value <- c(1:9)
+
+library(ggplot2)
+library(emojifont)
+df <- data.frame(
+  x = rep(seq(2, 15, 6.5), 3),
+  y = c(rep(15, 3), rep(10.5, 3), rep(6, 3)),
+  h = rep(4.25, 9),
+  w = rep(6.25, 9),
+  value = value,
+  info = c("Population",
+           "Number of HHs",
+           "Average HH size",
+           "Sex ratio (men/women)",
+           "Percentage living in urban areas",
+           "Child dependency ratio",
+           "Old age dependency ratio",
+           "Total fertility rate",
+           ""),
+  font_family = c(rep("fontawesome-webfont", 8),
+                  "EmojiOne"),
+  color = factor(1:9)
+)
+
+ggplot(df, aes(x, y, height = h, width = w, label = info)) +
+  ## Create the tiles using the `color` column
+  geom_tile(aes(fill = color)) +
+  ## Add the numeric values as text in `value` column
+  geom_text(color = "white", fontface = "bold", size = 7,
+            aes(label = value, x = x - 2.9, y = y + 1), hjust = 0) +
+  ## Add the labels for each box stored in the `info` column
+  geom_text(color = "white", fontface = "bold", size = 2.9,
+            aes(label = info, x = x - 2.9, y = y - 1), hjust = 0) +
+  coord_fixed() +
+  scale_fill_brewer(type = "qual", palette = c("Paired")) +
+  ## Use `geom_text()` to add the icons by specifying the unicode symbol.
+# geom_text(size = 20, aes(label = icon, family = font_family,
+#                           x = x + 1.5, y = y + 0.5), alpha = 0.25) +
+  theme_void() +
+  guides(fill = "none")
+```
