@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Country Analysis"
+author: "Barış Uçar"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -17,7 +17,9 @@ github-repo: rstudio/bookdown-demo
 
 # About
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+**Under construction**
+
+All about data on countries.
 
 ## Usage 
 

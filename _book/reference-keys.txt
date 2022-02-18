@@ -1,14 +1,13 @@
 fig:nice-fig
 tab:nice-tab
 eq:binom
-thm:tri
 about
 usage
 render-book
 preview-book
-şehirler
-adana
-ceyhan
+africa
+madagascar
+aaaaa
 cross
 chapters-and-sub-chapters
 captioned-figures-and-tables
