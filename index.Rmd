@@ -1,5 +1,5 @@
 --- 
-title: "Country Analysis"
+title: "The World in Numbers"
 author: "Barış Uçar"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
